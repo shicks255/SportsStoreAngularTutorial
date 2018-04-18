@@ -3,10 +3,10 @@ var Builder = require("systemjs-builder");
 var builder = new Builder("./");
 builder.config({
     paths: {
-        "rxjs/*": "node_modules/rx/dist/*.js"
+        "rxjs/*": "node_modules/rxjs/*.js",
     },
     map: {
-        "rxjs": "node_modules/rx/dist"
+        "rxjs": "node_modules/rxjs",
     },
     packages: {
         "rxjs": { main: "Rx.js", defaultExtensions: "js"}
@@ -18,4 +18,4 @@ builder.bundle("rxjs", "rxjs.module.min.js", {
     runtime: false,
     minify: true,
     mangle: false
-});
+})

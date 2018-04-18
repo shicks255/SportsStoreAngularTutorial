@@ -19,7 +19,7 @@
     "bootstrap": "^4.1.0",
     "font-awesome": "4.7.0",
     "intl": "1.2.5",
-    "html5-history-api": "4.2.10"
+    "html5-history-api": "4.2.7"
   },
 
   "devDependencies":
