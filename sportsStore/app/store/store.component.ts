@@ -23,7 +23,7 @@ export class StoreComponent{
                 .getProducts(this.selectedCategory)
                 .splice(pageIndex, pageIndex + this.productsPerPage));
         return this.repository.getProducts(this.selectedCategory)
-            .slice(pageIndex, pageIndex + this.productsPerPage);
+            .slice(Number(pageIndex), Number(pageIndex + this.productsPerPage));
     }
 
     get categories(): string[]
@@ -43,7 +43,7 @@ export class StoreComponent{
 
     changePageSize(newSize: number)
     {
-        this.productsPerPage = newSize;
+        this.productsPerPage = Number(newSize);
         this.changePage(1);
     }
 
