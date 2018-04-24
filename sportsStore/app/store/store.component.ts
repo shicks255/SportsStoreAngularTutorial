@@ -19,10 +19,6 @@ export class StoreComponent{
     get products(): Product[]
     {
         let pageIndex = (this.selectedPage - 1) * this.productsPerPage;
-        console.log(
-            this.repository
-                .getProducts(this.selectedCategory)
-                .splice(pageIndex, pageIndex + this.productsPerPage));
         return this.repository.getProducts(this.selectedCategory)
             .slice(Number(pageIndex), Number(pageIndex + this.productsPerPage));
     }

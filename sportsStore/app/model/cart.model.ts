@@ -12,9 +12,18 @@ export class Cart
     {
         let line = this.lines.find(line => line.product.id == product.id);
         if (line != undefined)
-        {
+            line.quantity += quantity;
+        if (line == undefined)
+            this.lines.push(new CartLine(product, quantity));
+        this.recalculate();
+    }
+
+    updateQuantity(product: Product, quantity: Number)
+    {
+        let line = this.lines.find(line => line.product.id = product.id);
+        if (line != undefined)
             line.quantity = Number(quantity);
-        }
+        this.recalculate();
     }
 
     removeLine(id: number)
@@ -37,8 +46,8 @@ export class Cart
         this.cartPrice = 0;
         this.lines.forEach(line =>
         {
-            this.itemCount = line.quantity;
-            this.cartPrice = (line.quantity * line.product.price);
+            this.itemCount += line.quantity;
+            this.cartPrice += (line.quantity * line.product.price);
         })
     }
 
