@@ -1,4 +1,4 @@
-import {Injectable, NgModule} from "@angular/core";
+import {NgModule} from "@angular/core";
 import {ProductRepository} from "./product.repository";
 import {StaticDataSource} from "./static.datasource";
 import {Cart} from "./cart.model";
