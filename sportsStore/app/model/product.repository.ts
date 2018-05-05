@@ -8,6 +8,7 @@ export class ProductRepository
     private products: Product[] = [];
     private categories: string[] = [];
 
+
     constructor(private dataSource: StaticDataSource)
     {
         dataSource.getProducts().subscribe(data =>
